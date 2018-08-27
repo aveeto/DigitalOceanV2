@@ -33,7 +33,7 @@ final class LetsEncryptCertificate extends AbstractEntity
     /**
      * @var array
      */
-    public $dnsNames;
+    public $dns_names;
 
     /**
      * @var string

@@ -1,5 +1,5 @@
 {
-    "name"       : "toin0u/digitalocean-v2",
+    "name"       : "aveeto/digitalocean-v2",
     "type"       : "library",
     "description": "DigitalOcean API v2 PHP 5.4+ library",
     "keywords"   : ["DigitalOcean", "API", "Cloud Hosting", "SSD", "VPS"],
@@ -7,6 +7,10 @@
     "license"    : "MIT",
 
     "authors": [
+        {
+            "name": "Georges Haddad",
+            "email": "sales@aveeto.com"
+        },
         {
             "name"    : "Antoine Corcy",
             "email"   : "contact@sbin.dk",

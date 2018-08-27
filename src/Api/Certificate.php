@@ -12,7 +12,7 @@
 namespace DigitalOceanV2\Api;
 
 use DigitalOceanV2\Entity\Certificate as CertificateEntity;
-
+use DigitalOceanV2\Entity\LetsEncryptCertificate as LetsEncryptCertificateEntity;
 /**
  * @author Jacob Holmes <jwh315@cox.net>
  */
@@ -74,6 +74,28 @@ class Certificate extends AbstractApi
         $certificate = json_decode($certificate);
 
         return new CertificateEntity($certificate->certificate);
+    }
+    
+    /**
+     * @param string $name
+     * @param string $dns_names
+     *
+     * @throws HttpException
+     *
+     * @return LetsEncryptCertificateEntity
+     */
+    public function createLetsEncrypt($name, $dns_names)
+    {
+        $data = [
+            'name' => $name,
+            'dns_names' => $dns_names
+        ];
+
+        $certificate = $this->adapter->post(sprintf('%s/certificates', $this->endpoint), $data);
+
+        $certificate = json_decode($certificate);
+
+        return new LetsEncryptCertificateEntity($certificate->certificate);
     }
 
     /**
